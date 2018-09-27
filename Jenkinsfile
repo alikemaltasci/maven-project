@@ -22,13 +22,13 @@ pipeline{
                 timeout(time:5, unit:'DAYS'){
                     input message: 'Approve production deployment?'
                 }
-                build job: 'deploy-to-prod'
-                success{
-                    echo 'Code deployed to production.'
+                build job: 'deploy-to-prod'                
+            }
+            success{
+                echo 'Code deployed to production.'
                 }
-                failure{
-                    echo 'Deployment failed.'
-                }
+            failure{
+                echo 'Deployment failed.'
             }
         }
     }
